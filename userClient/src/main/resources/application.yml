@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: user-service
+
+server:
+  port: 8052
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8050/eureka/
+  instance:
+    hostname: localhost
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
+          
